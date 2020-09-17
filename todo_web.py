@@ -17,7 +17,7 @@ def get_show_list():
 
 @get('/environ')
 def get_environ():
-    return 'os.environ'
+    return os.environ
 
 
 @get('/new_item')
