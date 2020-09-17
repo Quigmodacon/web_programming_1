@@ -1,5 +1,9 @@
-from bottle import get, post, run, template, request, redirect
+import os
 import sqlite3
+
+from bottle import get, post, run, template, request, redirect
+
+from bottle import default_app
 
 @get('/')
 def get_show_list():
@@ -10,9 +14,16 @@ def get_show_list():
     cursor.close()
     return template("show_list", rows=result)
 
+
+@get('/environ')
+def get_environ():
+    return 'os.environ'
+
+
 @get('/new_item')
 def get_new_item():
     return template("new_item")
+
 
 @post('/new_item')
 def post_new_item():
@@ -24,4 +35,6 @@ def post_new_item():
     cursor.close()
     redirect('/')
 
-run(host="localhost", port=8080)
+
+application = default_app()
+#run(host="localhost", port=8080)
