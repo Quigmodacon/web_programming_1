@@ -20,11 +20,6 @@ def get_show_list():
     return template("show_list", rows=result)
 
 
-@get('/environ')
-def get_environ():
-    return 'os.environ'
-
-
 @get('/new_item')
 def get_new_item():
     return template("new_item")
