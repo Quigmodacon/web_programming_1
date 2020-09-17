@@ -16,7 +16,7 @@ def get_new_item():
 
 @post('/new_item')
 def post_new_item():
-    new_item = request.form.get("new_item").strip()
+    new_item = request.forms.get("new_item").strip()
     conn = sqlite3.connect("todo.db")
     cursor = conn.cursor()
     cursor.execute("insert into todo (task, status) values (?, ?)", (new_item, 1))
