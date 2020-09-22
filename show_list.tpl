@@ -5,9 +5,10 @@
         %for item in row:
         <td>{{str(item)}}</td>
         %end
+        <td>
+            <a href="/delete_item/{{row[0]}}">delete</a>
+        </td>
     </tr>
     %end
 </table>
 <a href="/new_item">New Item...</a>
-<hr/>
-<a href="/delete_item/5">We don't like number 5</a>
