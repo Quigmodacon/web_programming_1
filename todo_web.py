@@ -41,7 +41,7 @@ def get_delete_item():
     print("we want to delete #" + str(id))
     conn = sqlite3.connect("todo.db")
     cursor = conn.cursor()
-    cursor.execute("delete from todo where id=?", (id,))
+    cursor.execute("delete from todo where id=(?,)", (id,))
     conn.commit()
     cursor.close()
     redirect('/')
