@@ -2,7 +2,7 @@
 <table border="1">
     %for row in rows:
     <tr>
-        %for item in row:
+        %for item in row[1:]:
         <td>{{str(item)}}</td>
         %end
         <td>
