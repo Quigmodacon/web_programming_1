@@ -37,7 +37,7 @@ def post_new_item():
 
 
 @get('/delete_item/<id>')
-def get_delete_item():
+def get_delete_item(id):
     conn = sqlite3.connect("todo.db")
     cursor = conn.cursor()
     cursor.execute("delete from todo where id=?", (id,))
