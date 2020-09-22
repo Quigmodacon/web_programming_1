@@ -36,6 +36,12 @@ def post_new_item():
     redirect('/')
 
 
+@get('/delete_item/<id>')
+def get_delete_item():
+    print("we want to delete #" + str(id))
+    redirect('/')
+
+
 if ON_PYTHONANYWHERE:
     application = default_app()
 else:
