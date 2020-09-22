@@ -11,4 +11,6 @@
     </tr>
     %end
 </table>
+<hr/>
 <a href="/new_item">New Item...</a>
+<hr/>
