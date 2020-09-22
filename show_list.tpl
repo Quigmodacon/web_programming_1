@@ -9,3 +9,5 @@
     %end
 </table>
 <a href="/new_item">New Item...</a>
+<hr/>
+<a href="/delete_item/5">We don't like number 5</a>
