@@ -40,7 +40,7 @@ def post_new_item():
 def get_delete_item():
     conn = sqlite3.connect("todo.db")
     cursor = conn.cursor()
-    cursor.execute("delete from todo where id=(?,)", (id,))
+    cursor.execute("delete from todo where id=?", (id,))
     conn.commit()
     cursor.close()
     redirect('/')
