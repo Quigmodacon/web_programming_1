@@ -62,7 +62,7 @@ def get_update_item(id):
 @post('/update_item')
 def post_update_item():
     id = int(request.forms.get("id").strip())
-    new_item = request.forms.get("updated_item").strip()
+    updated_item = request.forms.get("updated_item").strip()
     conn = sqlite3.connect("todo.db")
     cursor = conn.cursor()
     cursor.execute("update todo set task=? where id=?", (updated_item, id))
