@@ -2,8 +2,15 @@
 <table border="1">
     %for row in rows:
     <tr>
-        %for item in row[1:]:
-        <td>{{str(item)}}</td>
+        <td>{{str(row[0])}}</td>
+        <td>
+            <a href="/update_item/{{row[0]}}">{{row[1]}}</a>
+        </td>
+        <td>
+        %if row[2]==0:
+            <a href="/set_status/{{row[0]}}/1">[ {{str(row[2])}} ]</a>
+        %else :
+            <a href="/set_status/{{row[0]}}/0">[ {{str(row[2])}} ]</a>
         %end
         <td>
             <a href="/delete_item/{{row[0]}}">delete</a>
